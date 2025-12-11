@@ -114,9 +114,9 @@ export default function Home() {
     <>
       <canvas ref={canvasRef} className="webgl-container" />
       <div className="relative min-h-screen">
-        <div ref={resumeRef} className="max-w-5xl mx-auto bg-white shadow-2xl my-8 p-12">
+        <div ref={resumeRef} className="resume-shell max-w-5xl mx-auto bg-white shadow-2xl my-8 p-12">
           {/* Header */}
-          <header className="border-b-4 border-primary pb-6 mb-8">
+          <header className="resume-header border-b-4 border-primary pb-6 mb-8">
             <h1 className="text-5xl font-bold text-primary mb-2">Alejandro De La Mora</h1>
             <div className="flex flex-wrap gap-4 text-sm text-gray-700">
               <a href="mailto:alex@seshwithfriends.org" className="hover:text-secondary">alex@seshwithfriends.org</a>
@@ -133,7 +133,7 @@ export default function Home() {
 
           {/* Professional Summary */}
           <section className="mb-8">
-            <h2 className="text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Professional Summary</h2>
+            <h2 className="section-title text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Professional Summary</h2>
             <p className="text-gray-800 leading-relaxed">
               AI Solutions Architect and Engineer who thrives at the intersection of Generative AI, automation, and scalable delivery.
               I specialize in building &quot;GenAI that ships&quot;—architecting LLM workflows, agentic systems, and data pipelines that reach production
@@ -146,7 +146,7 @@ export default function Home() {
 
           {/* Technical Skills */}
           <section className="mb-8">
-            <h2 className="text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Technical Skills</h2>
+            <h2 className="section-title text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Technical Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <h3 className="font-semibold text-lg text-secondary mb-2">AI & ML:</h3>
@@ -169,7 +169,7 @@ export default function Home() {
 
           {/* Professional Experience */}
           <section className="mb-8">
-            <h2 className="text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Professional Experience</h2>
+            <h2 className="section-title text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Professional Experience</h2>
 
             {/* Assent */}
             <div className="mb-6">
@@ -233,7 +233,7 @@ export default function Home() {
 
           {/* Projects & Open Source */}
           <section className="mb-8">
-            <h2 className="text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Projects & Open Source</h2>
+            <h2 className="section-title text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Projects & Open Source</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-800 ml-4">
               <li><strong>GenAI Portfolio:</strong> A collection of over 100 shipped projects demonstrating real-world application of LLMs and automation. Code and wiring available for inspection on GitHub.</li>
               <li><strong>Community Education:</strong> Active mentor and content creator, helping non-technical teams bridge the gap to becoming AI-proficient operators.</li>
@@ -242,7 +242,7 @@ export default function Home() {
 
           {/* Education & Certifications */}
           <section className="mb-8">
-            <h2 className="text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Education & Certifications</h2>
+            <h2 className="section-title text-3xl font-bold text-primary mb-4 border-l-4 border-secondary pl-4">Education & Certifications</h2>
             <ul className="space-y-2 text-gray-800">
               <li><strong>Salesforce Certified AI Associate</strong> | Salesforce</li>
               <li><strong>Salesforce Certified Administrator</strong> | Salesforce</li>
@@ -255,7 +255,7 @@ export default function Home() {
         <div className="fixed bottom-8 right-8">
           <button
             onClick={downloadPDF}
-            className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="download-button bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
           >
             Download PDF
           </button>
