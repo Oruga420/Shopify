@@ -1,11 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #1e3a8a;
+  --secondary: #3b82f6;
+  --accent: #60a5fa;
+  --paper: #ffffff;
+  --sky: #f2f7ff;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: white;
-  color: #1a202c;
+  font-family: "Fredoka", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(96, 165, 250, 0.2) 0%, transparent 30%),
+    radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.18) 0%, transparent 28%),
+    radial-gradient(circle at 50% 85%, rgba(96, 165, 250, 0.15) 0%, transparent 32%),
+    linear-gradient(180deg, #fafdff 0%, #eef4ff 60%, #fafdff 100%);
+  color: #0f172a;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
 }
 
 .webgl-container {
@@ -16,4 +32,103 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+}
+
+.resume-shell {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #d7e5ff;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 20px 60px rgba(30, 58, 138, 0.16),
+    0 0 0 6px rgba(96, 165, 250, 0.08);
+  isolation: isolate;
+}
+
+.resume-shell::before,
+.resume-shell::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0px);
+  z-index: 0;
+}
+
+.resume-shell::before {
+  width: 220px;
+  height: 220px;
+  top: -80px;
+  right: -40px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 60%);
+}
+
+.resume-shell::after {
+  width: 180px;
+  height: 180px;
+  bottom: -60px;
+  left: -30px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.18), transparent 60%);
+}
+
+.resume-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-header h1 {
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 0 #d7e5ff;
+}
+
+.section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.4rem 0.85rem;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(96, 165, 250, 0.08));
+  border-radius: 999px;
+  box-shadow: 0 10px 0 #cde2ff;
+}
+
+.section-title::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--secondary), var(--accent));
+  box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.28);
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+strong {
+  color: var(--primary);
+}
+
+.download-button {
+  border: 3px solid #d7e5ff;
+  box-shadow:
+    0 18px 35px rgba(30, 58, 138, 0.28),
+    0 0 0 5px rgba(96, 165, 250, 0.16);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .resume-shell {
+    margin: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
